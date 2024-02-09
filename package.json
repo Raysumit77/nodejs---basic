@@ -10,7 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "nice-is-email": "^1.0.3",
+    "nodemailer": "^6.9.9",
     "qrcode": "^1.5.3",
     "slug": "^8.2.3"
   }

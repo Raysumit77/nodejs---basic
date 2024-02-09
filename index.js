@@ -73,39 +73,79 @@
  // First, you need to install the qrcode package
 // npm install qrcode
 
-const fs = require('fs');
-const qr = require('qrcode');
+// const fs = require('fs');
+// const qr = require('qrcode');
 
-// Function to generate QR code
-function generateQR(text, filename) {
-    qr.toFile(
-        filename,
-        text,
-        {
-            type: 'png',
-            errorCorrectionLevel: 'H', // High error correction level
-            scale: 10 // Size of the QR code
-        },
-        (err) => {
-            if (err) throw err;
-            console.log('QR code generated successfully!');
-        }
-    );
-}
+// // Function to generate QR code
+// function generateQR(text, filename) {
+//     qr.toFile(
+//         filename,
+//         text,
+//         {
+//             type: 'png',
+//             errorCorrectionLevel: 'H', // High error correction level
+//             scale: 10 // Size of the QR code
+//         },
+//         (err) => {
+//             if (err) throw err;
+//             console.log('QR code generated successfully!');
+//         }
+//     );
+// }
 
-// Sample CV data
-const cvData = `
-Name: John Doe
-Position: Software Engineer
-Experience: 5 years
-Contact: john.doe@example.com
-Phone: +1234567890
-Address: 123 Main Street, City, Country
-`;
+// // Sample CV data
+// const cvData = `
+// Name: John Doe
+// Position: Software Engineer
+// Experience: 5 years
+// Contact: john.doe@example.com
+// Phone: +1234567890
+// Address: 123 Main Street, City, Country
+// `;
 
-// File name for the QR code
-const qrFilename = 'cv_qr.png';
+// // File name for the QR code
+// const qrFilename = 'cv_qr.png';
 
-// Generate QR code for CV data
-generateQR(cvData, qrFilename);
+// // Generate QR code for CV data
+// generateQR(cvData, qrFilename);
 
+// const qr = require('qrcode');
+// const terminalImage = require('terminal-image');
+
+// // Function to generate QR code for a given URL
+// async function generateQR(url) {
+//     try {
+//         // Generate QR code as a data URI
+//         const qrDataURI = await qr.toDataURL(url);
+
+//         // Display the QR code in the terminal
+//         console.log(await terminalImage.buffer(qrDataURI));
+//     } catch (error) {
+//         console.error('Error generating QR code:', error);
+//     }
+// }
+
+// // Example URL (replace with your CV URL)
+// const cvUrl = 'https://your-cv-url.com';
+
+// // Generate QR code for CV URL
+// generateQR(cvUrl);
+const {bcrypt} = require ("./bcryptjs")
+const {mailer} = require("./mailer");
+ const sendMail =async (email,Sub) => {
+    return mailer(email,Sub)
+ };
+//  sendMail("ahsiray79@gmail.com","nodemailer test" 
+//  console.log(res);
+// });
+const encryptPw = (password) => {
+    return hashPw(password);
+};
+const matchPw = (password,hashPassword) => {
+    return checjPw(pass, hashPassword);
+};
+const ePass = encryptedpw('sumit');
+console.log({ ePass});
+
+const isValidPw = matchPw("sumit" ,ePass);
+console.log({ isValidPw});
