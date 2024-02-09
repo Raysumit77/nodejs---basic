@@ -5,27 +5,18 @@
 
 // joinSlug.js
 
-function joinSlug(slugs, separator = '-') {
-    return slugs.join(separator);
-}
-
-module.exports = joinSlug;
-
-
-
-// const toProperCase = (sentence) => {
-//     return String.spilit
+// function joinSlug(slugs, separator = '-') {
+//     return slugs.join(separator);
 // }
 
-
-
+// module.exports = ;
 
 // validateEmail.js
 
-const validateEmail(email) {
+// const validateEmail(email) {
   
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
+// const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+// return emailRegex.test(email);
+// }
 
-module.exports = validateEmail;
+// module.exports = validateEmail;
