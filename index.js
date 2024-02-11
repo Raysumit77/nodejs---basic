@@ -130,22 +130,23 @@
 
 // // Generate QR code for CV URL
 // generateQR(cvUrl);
-// const {hassPw,checkPw } = require ("./bcryptjs");
-const {mailer} = require("./mailer");
- const sendMail =async (email,Sub) => {
-    return mailer(email,Sub)
+ const {hashPw,checkPw } = require ("./bcrypt");
+// const {mailer} = require("./mailer");
+//  const sendMail =async (email,Sub) => {
+//     return mailer(email,Sub)
+//  };
+//    sendMail("........","hlo karki kena hau" ).then((res) => {
+//    console.log(res);
+//     });
+    
+    const encryptPw = (password) => {
+     return hashPw (password);
  };
-   sendMail("........","hlo karki kena hau" ).then((res) => {
-   console.log(res);
-    });
-// const encryptPw = (password) => {
-//     return hashPw(password);
-// };
-// const matchPw = (password,hashPassword) => {
-//     return checjPw(pass, hashPassword);
-// };
-// const ePass = encryptedpw('sumit');
-// console.log({ ePass});
+ const checkPw = (password,hashPassword) => {
+     return checkPw(pass, hashPassword);
+ };
+ const ePass = encryptPw('sumit');
+ console.log({ ePass});
 
-// const isValidPw = matchPw("sumit" ,ePass);
-// console.log({ isValidPw});
+ const isValidPw = checkPw("sumit" ,ePass);
+console.log({ isValidPw});
