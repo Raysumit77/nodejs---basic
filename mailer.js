@@ -6,16 +6,16 @@ const transporter = nodemailer.createTransport({
    secure: true,
    auth: {
      // TODO: replace `user` and `pass` values from <https://forwardemail.net>
-     user: ".......",
-     pass: ".......",
+     user: ".....",
+     pass: "......",
    },
  });
 const mailer = async(email,subject) => {
    const info = await transporter.sendMail({
-       from: '"Raktim shrestha" <foo@example.com>', // sender address
+       from: '"......" <foo@example.com>', // sender address
        to: email, // list of receivers
        subject: subject, // Subject lin
-       html: "<b>Hello world?</b>", // html body
+       html: "<b>kARKI wORLD</b>", // html body
      });
      return info.messageId;
 };
